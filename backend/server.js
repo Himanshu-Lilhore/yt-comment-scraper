@@ -1,7 +1,7 @@
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
-require('dotenv').config(); // Add dotenv for environment variables
+require('dotenv').config();
 
 const app = express();
 const port = 5000;
@@ -9,10 +9,10 @@ const port = 5000;
 app.use(cors());
 app.use(express.json());
 
-const apiKey = process.env.API_KEY; // Use environment variable for API key
+const apiKey = process.env.API_KEY;
 
 // Function to get YouTube comments
-const getYouTubeComments = async (apiKey, videoId, searchWord, maxComments = 2000) => {
+const getYouTubeComments = async (apiKey, videoId, searchWord, maxComments = 1000) => {
     let comments = [];
     let nextPageToken = null;
     let totalComments = 0;
