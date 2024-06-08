@@ -12,7 +12,7 @@ const App = () => {
     event.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:5000/fetch_comments', { url, word });
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/fetch_comments`, { url, word });
       setComments(response.data.comments);
       console.log('Fetched comments:', response.data.comments);
     } catch (error) {
@@ -25,7 +25,7 @@ const App = () => {
   const fetchReplies = async (commentId) => {
     console.log('Fetching replies for comment ID:', commentId);
     try {
-      const response = await axios.post('http://localhost:5000/fetch_replies', { commentId });
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/fetch_replies`, { commentId });
       console.log('Fetched replies for comment ID', commentId, ':', response.data.replies);
       const newComments = comments.map(comment => {
         if (comment.commentId === commentId) {
@@ -85,7 +85,7 @@ const App = () => {
       {loading && <p>Loading...</p>}
 
       {comments.length > 0 && <h2>Comments mentioning the word:</h2>}
-      
+
       <ul className="comments">
         {comments.map((comment, index) => (
           <li key={index} className="comment">
