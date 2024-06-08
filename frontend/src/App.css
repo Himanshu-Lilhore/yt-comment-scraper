@@ -45,6 +45,12 @@ body {
   animation: fadeIn 1s ease-in-out;
 }
 
+.github{
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+}
+
 .container {
   max-width: 800px;
   margin: 20px auto;
