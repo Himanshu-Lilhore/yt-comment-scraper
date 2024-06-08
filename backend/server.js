@@ -92,7 +92,20 @@ app.post('/fetch_comments', async (req, res) => {
     }
 
     try {
-        const videoId = new URLSearchParams(new URL(url).search).get('v');
+        const getVideoId = (url) => {
+            const urlObj = new URL(url);
+            if (urlObj.hostname === 'www.youtube.com' || urlObj.hostname === 'youtube.com') {
+                if (urlObj.pathname === '/watch') {
+                    return urlObj.searchParams.get('v');
+                } else if (urlObj.pathname.startsWith('/shorts/')) {
+                    return urlObj.pathname.split('/')[2];
+                }
+            }
+            return null;
+        };
+
+        const videoId = getVideoId(url)
+        
         if (!videoId) {
             return res.status(400).json({ error: 'Invalid YouTube URL' });
         }
