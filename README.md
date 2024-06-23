@@ -13,13 +13,13 @@ This project came to my mind because, every time there was a background song in 
 - Fetch and display replies to comments.
 - Supports both regular YouTube videos and YouTube Shorts.
 
-## Screenshots
-
-![image](https://github.com/Himanshu-Lilhore/yt-comment-scraper/assets/63799853/b8dbbcda-6f8d-47d1-9a1b-b52558423d21)
-
 ## Demo
 
 You can check out the live demo [here](https://yt-comment-scraper.vercel.app/).
+
+## Screenshots
+ 
+![image](https://github.com/Himanshu-Lilhore/yt-comment-scraper/assets/63799853/4bbbb25a-cdcd-4ce3-a977-63d22047a8ae)
 
 ## Getting Started
 
